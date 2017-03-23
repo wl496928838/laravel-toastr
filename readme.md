@@ -6,21 +6,21 @@ Inspired by [laracasts flash](https://github.com/laracasts/flash)
 
 Using Composer
 
-    composer require chensuilong/reminder
+    composer require chensuilong/toastr
 
 Add the service provider to `config/app.php`
 
 ```php
-chensuilong\Reminder\ReminderServiceProvider::class,
+chensuilong\toastr\toastrServiceProvider::class,
 ```
 
 Optionally include the Facade in config/app.php if you'd like.
 
 ```php
-'Reminder'  => chensuilong\Reminder\ReminderFacade::class,
+'toastr'  => chensuilong\toastr\toastrFacade::class,
 ```
 
-> You can use reminder() function available.
+> You can use toastr() function available.
 
 ### Dependencies
 
@@ -28,25 +28,25 @@ jQuery [toast](https://github.com/CodeSeven/toastr), you need to add css and js 
 
 ### Basic
 
-You should add `{!! Reminder::message() !!}` to your html.
+You should add `{!! toastr::message() !!}` to your html.
 
 Then.
 
-* Reminder::info('foo', 'bar', []);
+* toastr::info('foo', 'bar', []);
 
-* Reminder::success('foo', 'bar', []);
+* toastr::success('foo', 'bar', []);
 
-* Reminder::warning('foo', 'bar', []);
+* toastr::warning('foo', 'bar', []);
 
-* Reminder::error('foo', 'bar', []);
+* toastr::error('foo', 'bar', []);
 
-* reminder()->info('foo', 'bar', []);
+* toastr()->info('foo', 'bar', []);
 
 ```php
 <?php
 
 Route::get('/', function () {
-    Reminder::success('Hi! this is Reminder', 'Hello', ["positionClass" => "toast-bottom-right"]);
+    toastr::success('Hi! this is toastr', 'Hello', ["positionClass" => "toast-bottom-right"]);
 
     return view('welcome');
 });
@@ -68,7 +68,7 @@ Route::get('/', function () {
 
         <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-        {!! reminder()->message() !!}
+        {!! toastr()->message() !!}
     </body>
 </html>
 ```
@@ -77,11 +77,11 @@ Route::get('/', function () {
 
 ### Options
 
-You can set custom options for Reminder. Run:
+You can set custom options for toastr. Run:
 
     php artisan vendor:publish
 
-to publish the config file for reminder.
+to publish the config file for toastr.
 
 You can see [toastr's documentation](http://codeseven.github.io/toastr/demo.html) to custom your need.
 
