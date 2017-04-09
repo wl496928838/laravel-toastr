@@ -1,7 +1,7 @@
 {
     "name": "csl/toastr",
     "description": "Support laravel5.* toastr is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.",
-    "keywords": ["laravel flash", "toastr","message"],
+    "keywords": ["laravel flash","laravel-flash","laravel-alert","laravel alert", "laravel toastr","message"],
     "license": "MIT",
     "authors": [
         {
