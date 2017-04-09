@@ -17,7 +17,7 @@ Add the service provider to `config/app.php`
 Csl\Toastr\ToastrServiceProvider::class,
 ```
 
-Optionally include the Facade in config/app.php if you'd like.
+Add the service Facade in `config/app.php`
 
 ```php
 'Toastr'  => Csl\Toastr\Toastr::class,
@@ -31,6 +31,7 @@ jQuery [toast](https://github.com/CodeSeven/toastr), you need to add css and js 
 <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
 {!! Toastr::message() !!}
 ```
 
