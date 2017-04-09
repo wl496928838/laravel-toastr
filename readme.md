@@ -28,19 +28,20 @@ Optionally include the Facade in config/app.php if you'd like.
 jQuery [toast](https://github.com/CodeSeven/toastr), you need to add css and js to your html.
 
 ```php
+<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
 ```
 
 ```php
-Toastr::info('foo', 'bar', []);
+Toastr::info('foo', 'bar');
 
-Toastr::success('foo', 'bar', []);
+Toastr::success('foo', 'bar');
 
-Toastr::warning('foo', 'bar', []);
+Toastr::warning('foo', 'bar');
 
-Toastr::error('foo', 'bar', []);
-
-Toastr()->info('foo', 'bar', []);
+Toastr::error('foo', 'bar');
 ```
 
 # Example
