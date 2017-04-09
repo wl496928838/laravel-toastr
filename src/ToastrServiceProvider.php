@@ -1,10 +1,11 @@
 <?php
 
-namespace chensuilong\toastr;
+namespace Csl\Toastr;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
 
-class toastrServiceProvider extends ServiceProvider
+class ToastrServiceprovider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -13,11 +14,6 @@ class toastrServiceProvider extends ServiceProvider
      */
     protected $defer = false;
 
-    /**
-     * Bootstrap the config file.
-     *
-     * @return void
-     */
     public function boot()
     {
         $this->publishes([
@@ -25,16 +21,18 @@ class toastrServiceProvider extends ServiceProvider
         ], 'config');
     }
 
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
     public function register()
+    {
+        $this->app->singleton('toastr', function () {
+            return $this->app->make('Csl\Toastr\ToastrNotifier');
+        });
+    }
+
+    private function registerToastr()
     {
         $this->app->bind('toastr', function ($app)
         {
-            return new toastr($app->session, $app->config);
+            return new Toastr($app->session, $app->config);
         });
     }
 
