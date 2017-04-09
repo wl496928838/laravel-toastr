@@ -17,7 +17,7 @@ Add the service provider to `config/app.php`
 Csl\Toastr\ToastrServiceProvider::class,
 ```
 
-Add the service Facade in `config/app.php`
+Add the Facade in `config/app.php`
 
 ```php
 'Toastr'  => Csl\Toastr\Toastr::class,
