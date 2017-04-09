@@ -1,26 +1,28 @@
 # laravel-toastr
 
-Inspired by [laracasts flash](https://github.com/laracasts/flash)
+Support laravel5.* 
+
+toastr is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.",
+    "keywords": ["laravel flash", "toastr","message"],
+    "license": "MIT",
 
 ### install
 
 Using Composer
 
-    composer require chensuilong/toastr
+    composer require csl/toastr
 
 Add the service provider to `config/app.php`
 
 ```php
-chensuilong\toastr\toastrServiceProvider::class,
+Csl\Toastr\ToastrServiceProvider::class,
 ```
 
 Optionally include the Facade in config/app.php if you'd like.
 
 ```php
-'toastr'  => chensuilong\toastr\toastrFacade::class,
+'Toastr'  => Csl\Toastr\Toastr::class,
 ```
-
-> You can use toastr() function available.
 
 ### Dependencies
 
@@ -28,25 +30,26 @@ jQuery [toast](https://github.com/CodeSeven/toastr), you need to add css and js 
 
 ### Basic
 
-You should add `{!! toastr::message() !!}` to your html.
+You should add `{!! Reminder::message() !!}` to your html.
 
 Then.
+```php
+Toastr::info('foo', 'bar', []);
 
-* toastr::info('foo', 'bar', []);
+Toastr::success('foo', 'bar', []);
 
-* toastr::success('foo', 'bar', []);
+Toastr::warning('foo', 'bar', []);
 
-* toastr::warning('foo', 'bar', []);
+Toastr::error('foo', 'bar', []);
 
-* toastr::error('foo', 'bar', []);
-
-* toastr()->info('foo', 'bar', []);
+Toastr()->info('foo', 'bar', []);
+```
 
 ```php
 <?php
 
 Route::get('/', function () {
-    toastr::success('Hi! this is toastr', 'Hello', ["positionClass" => "toast-bottom-right"]);
+    Toastr::success('Hi! this is Toastr', 'Hello', ["positionClass" => "toast-bottom-left"]);
 
     return view('welcome');
 });
@@ -68,7 +71,7 @@ Route::get('/', function () {
 
         <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-        {!! toastr()->message() !!}
+        {!! Toastr::message() !!}
     </body>
 </html>
 ```
@@ -77,12 +80,10 @@ Route::get('/', function () {
 
 ### Options
 
-You can set custom options for toastr. Run:
+You can set custom options for Reminder. Run:
 
     php artisan vendor:publish
 
-to publish the config file for toastr.
+to publish the config file for `config/toastr.php`.
 
 You can see [toastr's documentation](http://codeseven.github.io/toastr/demo.html) to custom your need.
-
-### MIT
