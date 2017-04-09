@@ -78,7 +78,9 @@ Route::get('/', function () {
 
 If you need to modify the flash message partials, you can run:
 
+```
     php artisan vendor:publish
+```
 
 to publish the config file for `config/toastr.php`.
 
