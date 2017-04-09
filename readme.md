@@ -2,9 +2,8 @@
 
 Support laravel5.* 
 
-toastr is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.",
-    "keywords": ["laravel flash", "toastr","message"],
-    "license": "MIT",
+toastr is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.
+
 
 ### install
 
