@@ -1,22 +1,23 @@
 {
-    "name": "chensuilong/toastr",
-    "description": "这是一个基于toastr的提示框组件",
+    "name": "csl/toastr",
+    "description": "Support laravel5.* toastr is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.",
+    "keywords": ["laravel flash", "toastr","message"],
     "license": "MIT",
     "authors": [
         {
             "name": "chensuilong",
-            "email": "496928838@qq.com"
+            "email": "csuilong@gmail.com"
         }
     ],
-    "require": {
-        "illuminate/support": "~5.0"
+    "support": {
+        "email": "csuilong@gmail.com"
     },
+	"require": {
+		"illuminate/support": "~5.0"
+	},
     "autoload": {
         "psr-4": {
-            "Rry\\Reminder\\": "src/"
-        },
-        "files": [
-            "src/helper.php"
-        ]
+            "csl\\Toastr\\": "src/"
+        }
     }
 }
