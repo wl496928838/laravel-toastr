@@ -5,7 +5,7 @@ Support laravel5.*
 toastr is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.
 
 
-### install
+## Installation
 
 Using Composer
 
@@ -23,15 +23,14 @@ Optionally include the Facade in config/app.php if you'd like.
 'Toastr'  => Csl\Toastr\Toastr::class,
 ```
 
-### Dependencies
+## Usage
 
 jQuery [toast](https://github.com/CodeSeven/toastr), you need to add css and js to your html.
 
-### Basic
+```php
+{!! Toastr::message() !!}
+```
 
-You should add `{!! Reminder::message() !!}` to your html.
-
-Then.
 ```php
 Toastr::info('foo', 'bar', []);
 
@@ -43,6 +42,8 @@ Toastr::error('foo', 'bar', []);
 
 Toastr()->info('foo', 'bar', []);
 ```
+
+# Example
 
 ```php
 <?php
@@ -62,12 +63,6 @@ Route::get('/', function () {
         <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-
         <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
         {!! Toastr::message() !!}
@@ -75,11 +70,11 @@ Route::get('/', function () {
 </html>
 ```
 
-![](http://ww3.sinaimg.cn/mw690/baa3278fgw1ey7ky56nbgj20n60fuaav.jpg)
+![](https://github.com/wl496928838/laravel-toastr/blob/master/pic.png?raw=true)
 
-### Options
+## Config
 
-You can set custom options for Reminder. Run:
+If you need to modify the flash message partials, you can run:
 
     php artisan vendor:publish
 
